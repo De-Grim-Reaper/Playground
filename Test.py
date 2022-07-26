@@ -301,4 +301,4 @@ import shutil
 #    print("~Don't be dumb.\n")
 #    x = input("Input a number ")
 
-help('modules')
+# help('modules') # search for Python Module Index for more info.

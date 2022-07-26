@@ -11,32 +11,32 @@ def play_game(playerOpt):
     computer = random.choice(mylist)
 
     if playerOpt == computer:
-        print('You picked', playerOpt, 'and the computer picked', computer)
+        print('{} picked:'.format(player_name), playerOpt, '\ncomputer picked:', computer)
         print("It was a draw!\n")
-        return 0
+        return 1
     elif playerOpt == 'Scissors' and computer == 'Rock':
-        print('\nYou picked', playerOpt, 'and the computer picked', computer)
-        print("Computer won!")
+        print('\n{} picked:'.format(player_name), playerOpt, '\ncomputer picked:', computer)
+        print("You lost!")
         return 1
     elif playerOpt == 'Rock' and computer == 'Paper':
-        print('\nYou picked', playerOpt, 'and the computer picked', computer)
-        print("Computer won!")
+        print('\n{} picked:'.format(player_name), playerOpt, '\ncomputer picked:', computer)
+        print("You lost!")
         return 1
     elif playerOpt == 'Paper' and computer == 'Scissors':
-        print('\nYou picked', playerOpt, 'and the computer picked', computer)
-        print("Computer won!")
+        print('\n{} picked:'.format(player_name), playerOpt, '\ncomputer picked:', computer)
+        print("You lost!")
         return 1
 
     elif playerOpt == 'Rock' and computer == 'Scissors':
-        print('\nYou picked', playerOpt, 'and the computer picked', computer)
+        print('\n{} picked:'.format(player_name), playerOpt, '\ncomputer picked:', computer)
         print("You won!")
         return 1
     elif playerOpt == 'Paper' and computer == 'Rock':
-        print('\nYou picked', playerOpt, 'and the computer picked', computer)
+        print('\n{} picked:'.format(player_name), playerOpt, '\ncomputer picked:', computer)
         print("You won!")
         return 1
     elif playerOpt == 'Scissors' and computer == 'Paper':
-        print('\nYou picked', playerOpt, 'and the computer picked', computer)
+        print('\n{} picked:'.format(player_name), playerOpt, '\ncomputer picked:', computer)
         print("You won!")
         return 1
 
@@ -45,9 +45,32 @@ def play_game(playerOpt):
         return 0
 
 
-played_game = (play_game(input("Play game by typing either Rock, Paper or Scissors\n").capitalize()))
+print("Hey there! Do you want to play Rock, Paper, Scissors?")
 
-while played_game == 0:
-    played_game = (play_game(input("Play game by typing either Rock, Paper or Scissors\n").capitalize()))
-else:
-    print('\n\nGame Ends.')
+Response = ['Yes', 'No']
+Ans = None
+
+while Ans not in Response:
+    Ans = input("Yes/No?: ").capitalize()
+    if Ans != "Yes":
+        print("Get outta here dumbass! Why bother?")
+        break
+
+    print("Good Choice!\nLet's Begin!\n")
+
+    player_name = input("Enter your name to begin: ")
+
+    while len(player_name) == 0:
+        player_name = input("Enter your name to begin: ")
+
+    while True:
+        player_Opt = (play_game(input("\nRock, Paper or Scissors?: ").capitalize()))
+
+        while player_Opt == 0:
+            player_Opt = (play_game(input("\nRock, Paper or Scissors?: ").capitalize()))
+
+        play_again = input("Play again? (Yes/No): ").capitalize()
+        if play_again != "Yes":
+            break
+
+print('\n\nGame Ends.')
