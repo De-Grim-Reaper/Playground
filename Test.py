@@ -294,11 +294,11 @@ import shutil
 # else:
 #    print("~Task accomplished successfully.")
 
-x = input("Input a number ")
+# x = input("Input a number ")
 
-while x.isalpha() or len(x) == 0:
-    print("~Don't you know how to read?")
-    print("~Don't be dumb.\n")
-    x = input("Input a number ")
+# while x.isalpha() or len(x) == 0:
+#    print("~Don't you know how to read?")
+#    print("~Don't be dumb.\n")
+#    x = input("Input a number ")
 
-
+help('modules')
