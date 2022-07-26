@@ -17,7 +17,7 @@ Name = input()
 Name = Name.capitalize()
 
 while len(Name) == 0:
-    Name = input("Read the question and try again: \n")
+    Name = input("~Read the question and try again: \n")
     Name = Name.capitalize()
 
 print("Ok then {}, what's your favourite food?".format(Name))
@@ -25,7 +25,7 @@ food = input()
 food = food.capitalize()
 
 while len(food) == 0:
-    food = input("Did i stutter?: \n")
+    food = input("~Did i stutter?: \n")
     food = food.capitalize()
 
 print("Actually i don't give a fuck about your favorite food, i just wanted to be sure you're human."
@@ -52,7 +52,7 @@ else:
 quest = input("How old are you {}? ".format(Name))
 
 while quest[:10].isalpha() or len(quest) == 0:
-    print("Who taught you how to read?\n")
+    print("~Who taught you how to read?\n")
     quest = input("How old are you {}? ".format(Name))
 age = int(quest)
 

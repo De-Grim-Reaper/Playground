@@ -294,8 +294,11 @@ import shutil
 # else:
 #    print("~Task accomplished successfully.")
 
-x = 22
-y = 7
+x = input("Input a number ")
 
-print(math.fmod(x, y))
-print(22/7)
+while x.isalpha() or len(x) == 0:
+    print("~Don't you know how to read?")
+    print("~Don't be dumb.\n")
+    x = input("Input a number ")
+
+
