@@ -28,7 +28,7 @@ while True:
         food = food.capitalize()
 
     print("Actually i don't give a fuck about your favorite food, i just wanted to be sure you're human."
-        " But, {}?? Frs man? You ain't got taste.".format(food))
+          "But, {}?? Frs man? You ain't got taste.".format(food))
     print("That reminds me, what's your gender?\n")
     gender = input("Male/Female? \n")
     gender = gender.lower()
