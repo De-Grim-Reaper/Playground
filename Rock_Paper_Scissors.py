@@ -13,7 +13,7 @@ def play_game(playerOpt):
     if playerOpt == computer:
         print('{} picked:'.format(player_name), playerOpt, '\ncomputer picked:', computer)
         print("It was a draw!\n")
-        return 1
+        return 0
     elif playerOpt == 'Scissors' and computer == 'Rock':
         print('\n{} picked:'.format(player_name), playerOpt, '\ncomputer picked:', computer)
         print("You lost!")
