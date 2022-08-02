@@ -1,14 +1,12 @@
-
-from random import random
-import re
 import random
-import string
 
 
 def play_game(playerOpt):
     mylist = ["Rock", "Paper", "Scissors"]
 
     computer = random.choice(mylist)
+    player_score = 0
+    computer_score = 0
 
     if playerOpt == computer:
         print('{} picked:'.format(player_name), playerOpt, '\ncomputer picked:', computer)
@@ -17,28 +15,34 @@ def play_game(playerOpt):
     elif playerOpt == 'Scissors' and computer == 'Rock':
         print('\n{} picked:'.format(player_name), playerOpt, '\ncomputer picked:', computer)
         print("You lost!")
-        return 1
+        computer_score += 1
+        return computer_score
     elif playerOpt == 'Rock' and computer == 'Paper':
         print('\n{} picked:'.format(player_name), playerOpt, '\ncomputer picked:', computer)
         print("You lost!")
-        return 1
+        computer_score += 1
+        return computer_score
     elif playerOpt == 'Paper' and computer == 'Scissors':
         print('\n{} picked:'.format(player_name), playerOpt, '\ncomputer picked:', computer)
         print("You lost!")
-        return 1
+        computer_score += 1
+        return computer_score
 
     elif playerOpt == 'Rock' and computer == 'Scissors':
         print('\n{} picked:'.format(player_name), playerOpt, '\ncomputer picked:', computer)
         print("You won!")
-        return 1
+        player_score += 1
+        return player_score
     elif playerOpt == 'Paper' and computer == 'Rock':
         print('\n{} picked:'.format(player_name), playerOpt, '\ncomputer picked:', computer)
         print("You won!")
-        return 1
+        player_score += 1
+        return player_score
     elif playerOpt == 'Scissors' and computer == 'Paper':
         print('\n{} picked:'.format(player_name), playerOpt, '\ncomputer picked:', computer)
         print("You won!")
-        return 1
+        player_score += 1
+        return player_score
 
     else:
         print('The value entered is invalid try again\n')
@@ -64,10 +68,10 @@ while Ans not in Response:
         player_name = input("Enter your name to begin: ")
 
     while True:
-        player_Opt = (play_game(input("\nRock, Paper or Scissors?: ").capitalize()))
+        player_Opt = play_game(input("\nRock, Paper or Scissors?: ").capitalize())
 
         while player_Opt == 0:
-            player_Opt = (play_game(input("\nRock, Paper or Scissors?: ").capitalize()))
+            player_Opt = play_game(input("\nRock, Paper or Scissors?: ").capitalize())
 
         play_again = input("Play again? (Yes/No): ").capitalize()
         if play_again != "Yes":
