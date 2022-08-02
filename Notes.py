@@ -4,6 +4,11 @@ import random
 import os
 import shutil
 
+# a = """Lorem ipsum dolor sit amet,
+# consectetur adipiscing elit,
+# sed do eiusmod tempor incididunt
+# ut labore et dolore magna aliqua."""
+# print(a)
 # print("Hey man, I got a gift for you... open it?")
 # ans = input("Enter yes to open gift: ")
 # ans_1 = ans.lower()
@@ -206,6 +211,7 @@ import shutil
 
 # myList = ["Rock", "Paper", "Scissors"]
 # z = random.choice(myList)
+# print(random.randrange(1, 10))
 
 # cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, "J", "Q", "K", "A"]
 # random.shuffle(cards)
