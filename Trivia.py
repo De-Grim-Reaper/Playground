@@ -1,13 +1,12 @@
-# -----------------------
 def new_game():
     guesses = []
     correct_guesses = 0
-    question_num = 1
+    question_num = 0
 
     for keys in questions:
         print("------------------------------------")
         print(keys)
-        for i in options[question_num-1]:
+        for i in options[question_num]:
             print(i)
         guess = input("Enter (A,B,C or D): ").upper()
         guesses.append(guess)
@@ -18,7 +17,6 @@ def new_game():
     display_score(correct_guesses, guesses)
 
 
-# -----------------------
 def check_answer(answer, guess):
     if answer == guess:
         print("CORRECT!")
@@ -28,7 +26,6 @@ def check_answer(answer, guess):
         return 0
 
 
-# -----------------------
 def display_score(correct_guesses, guesses):
     print("-----------------------")
     print("RESULTS")
@@ -43,13 +40,17 @@ def display_score(correct_guesses, guesses):
     for i in guesses:
         print(i, end=" ")
 
-    score = int((correct_guesses/guesses)*100)
-    print("Your Score is: "+str(score))
+    score = int((correct_guesses/len(questions))*100)
+    print()
+    print("Your Score is: "+str(score)+"%")
 
 
-# -----------------------
 def play_again():
-    pass
+    response = input("Play again? (Yes/No): ").capitalize()
+    if response == "Yes":
+        return True
+    else:
+        return False
 
 
 # -----------------------
@@ -67,3 +68,9 @@ options = [["A. Guido van Rossum", "B. Elon Musk", "C. Bill Gates", "D. Mark Zuc
            ["A. True", "B. False", "C. Sometimes", "D. What's Earth?"]]
 
 new_game()
+
+while play_again():
+    new_game()
+
+print()
+print("Thanks for playing!!!")
